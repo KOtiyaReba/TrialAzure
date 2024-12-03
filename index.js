@@ -3,6 +3,8 @@ var cors = require("cors");
 require("./connection");
 var empModel = require("./model/student");
 const path = require("path");
+require("dotenv").config();
+const PORT = process.env.PORT || 3004;
 var app = express();
 
 // midd
@@ -54,6 +56,6 @@ app.get("*", (req, res) => {
 });
 
 
-app.listen(3004, () => {
+app.listen(PORT, () => {
   console.log("port is up");
 });
